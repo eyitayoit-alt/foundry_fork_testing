@@ -1,66 +1,30 @@
-## Foundry
+# Foundry Fork Testing Cheatcodes
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Introduction
 
-Foundry consists of:
+Testing is important in smart contract development due to the immutable nature of smart contracts. Testing helps identify and resolve potential security vulnerabilities in smart contracts. Safeguard against unauthorized access.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Sometimes smart contract developers must interact with real-world data that testnet cannot provide. Hence, there is a need for fork testing. 
 
-## Documentation
+## Getting Started
 
-https://book.getfoundry.sh/
+1. Fork the repositry.
+2. Cd into the project directory.
+3. Create a `.env` file and add your MAINNET RPC URL.
+4. Run the tests with the command:
 
-## Usage
+   ```bash
+    forge test
+    ```
 
-### Build
+5. For trace result, run the command:
 
-```shell
-$ forge build
+```bash
+forge test -vvv
 ```
 
-### Test
+Or
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge test -vvvv
 ```
